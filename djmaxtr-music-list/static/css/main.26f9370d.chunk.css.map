@@ -1,0 +1,1 @@
+{"version":3,"sources":["MusicTable.css"],"names":[],"mappings":"AAAA,mBACE,WAAY,CACZ,UACF,CAEA,iBACE,UACF,CACA,gBACE,aACF","file":"main.26f9370d.chunk.css","sourcesContent":[".MuiTableCell-root {\n  padding: 1px;\n  margin: 1px;\n}\n\n.youtube-disable {\n  color: #999999;\n}\n.youtube-enable {\n  color: #da1725;\n}\n"]}
