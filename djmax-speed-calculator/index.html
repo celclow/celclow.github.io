@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DJMAX Speed Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" charset="utf-8" defer></script>
+  </head>
+
+  <body>
+    <h1>DJMAX Speed Calculator</h1>
+
+    <section id="settings">
+      <h2>Settings</h2>
+      <form action="index.html" method="get">
+        <label>Target Speed (Speed * BPM)</label>
+        <input
+          type="number"
+          name="targetspeed"
+          id="settings-targetspeed"
+          min="1"
+          max="9999"
+          placeholder="600"
+        />
+        <button type="submit">Calc</button>
+      </form>
+    </section>
+
+    <section id="speed-list-section">
+      <h2>Speed List</h2>
+      <ul id="speed-list" class="list">
+        <li>
+          <ul class="row row-header">
+            <li>Speed</li>
+            <li>BPM</li>
+          </ul>
+        </li>
+        <!-- <li>
+          <ul class="row">
+            <li name="speed">1.0</li>
+            <li name="bpm">600</li>
+          </ul>
+        </li> -->
+      </ul>
+    </section>
+
+    <section id="bpm-list-section">
+      <h2>BPM List</h2>
+      <ul id="bpm-list" class="list">
+        <li>
+          <ul class="row row-header">
+            <li>BPM</li>
+            <li>Speed</li>
+          </ul>
+        </li>
+        <!-- <li>
+          <ul class="row">
+            <li>200</li>
+            <li>3.0</li>
+          </ul>
+        </li> -->
+      </ul>
+    </section>
+  </body>
+</html>

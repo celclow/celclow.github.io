@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+.color-0 {
+  background-color: #edad0b;
+}
+.color-1 {
+  background-color: #f6ca06;
+}
+.color-2 {
+  background-color: #ffe600;
+}
+.color-3 {
+  background-color: #d8e212;
+}
+.color-4 {
+  background-color: #a4c520;
+}
+.color-5 {
+  background-color: #23ac0e;
+}
+.color-6 {
+  background-color: #009250;
+}
+.color-7 {
+  background-color: #009f8c;
+}
+.color-8 {
+  background-color: #0086ab;
+}
+.color-9 {
+  background-color: #007fb1;
+}
+.color-10 {
+  background-color: #007ab7;
+}
+.color-11 {
+  background-color: #3261ab;
+}
+.color-12 {
+  background-color: #5d639e;
+}
+.color-13 {
+  background-color: #744199;
+}
+.color-14 {
+  background-color: #932674;
+}
+.color-15 {
+  background-color: #a52175;
+}
+.color-16 {
+  background-color: #b61972;
+}
+.color-17 {
+  background-color: #bf1e56;
+}
+.color-18 {
+  background-color: #c7243a;
+}
+
+html,
+body {
+  font-family: "Verdana";
+}
+
+h1 {
+  font-size: 20pt;
+}
+
+h2 {
+  font-size: 15pt;
+}
+
+body {
+  font-size: 10pt;
+}
+
+ul.list {
+  list-style: none;
+}
+
+.row-header {
+  font-weight: bold;
+}
+
+.row {
+  display: table;
+}
+
+.row li {
+  display: table-cell;
+  width: 5em;
+}
+
+.mark {
+  font-weight: bold;
+}
