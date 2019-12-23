@@ -16,7 +16,7 @@ const SPEED_LIST = [
   4,
   4.25,
   4.5,
-  4.25,
+  4.75,
   5
 ];
 const MIN_BPM = 60;
