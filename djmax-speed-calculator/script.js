@@ -53,18 +53,32 @@ let createSpeedList = targetSpeed => {
     </li>
 */
   let rootElm = document.createElement("li");
-  SPEED_LIST.forEach(speed => {
+  SPEED_LIST.forEach((speed, i) => {
     let rowElm = document.createElement("ul");
     rowElm.classList.add("row");
 
     let speedElm = document.createElement("li");
-    let bpmElm = document.createElement("li");
+    let lowBpmElm = document.createElement("li");
+    let midBpmElm = document.createElement("li");
+    let highBpmElm = document.createElement("li");
 
     speedElm.append(speed);
-    bpmElm.append(round(targetSpeed / speed, 3));
+    if (i < SPEED_LIST.length - 1) {
+      lowBpmElm.append(
+        round(targetSpeed / ((speed + SPEED_LIST[i + 1]) / 2), 3)
+      );
+    }
+    midBpmElm.append(round(targetSpeed / speed, 3));
+    if (0 < i) {
+      highBpmElm.append(
+        round(targetSpeed / ((SPEED_LIST[i - 1] + speed) / 2), 3)
+      );
+    }
 
     rowElm.append(speedElm);
-    rowElm.append(bpmElm);
+    rowElm.append(lowBpmElm);
+    rowElm.append(midBpmElm);
+    rowElm.append(highBpmElm);
 
     rootElm.append(rowElm);
   });
