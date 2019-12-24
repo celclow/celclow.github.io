@@ -87,6 +87,17 @@ class SpeedCalculator {
 
     return bpmList;
   }
+
+  getNealySpeed(bpm) {
+    let speed;
+    this.getSpeedList().forEach(row => {
+      if ((row.lowBpm || 0) <= bpm && bpm < (row.highBpm || 9999)) {
+        speed = row.speed;
+      }
+    });
+
+    return speed;
+  }
 }
 
 class ElementCreator {
@@ -148,7 +159,9 @@ class ElementCreator {
       let speedElm = document.createElement("li");
 
       bpmElm.append(row.bpm);
-      speedElm.append(row.speed);
+      speedElm.append(
+        row.speed // + ", " + speedCalculator.getNealySpeed(row.bpm)
+      );
       if (row.mark) {
         speedElm.classList.add("mark");
       }
