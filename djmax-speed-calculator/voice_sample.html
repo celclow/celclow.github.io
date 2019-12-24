@@ -1,0 +1,43 @@
+<script>
+  let say = text => {
+    let synthesisUtterance = new SpeechSynthesisUtterance();
+    synthesisUtterance.text = text;
+    speechSynthesis.speak(synthesisUtterance);
+  };
+
+  let listen = () => {
+    let SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+    let recognition = new SpeechRecognition();
+    //recognition.continuous = true;
+    //recognition.interimResults = true;
+    recognition.onresult = event => {
+      console.log(event);
+      let result = event.results[event.resultIndex];
+
+      if (result.isFinal) {
+        say(result[0].transcript);
+      }
+    };
+    recognition.onsoundend = event => {
+      console.log("soundend");
+      listen();
+    };
+    recognition.onspeechend = event => {
+      console.log("speechend");
+      listen();
+    };
+    recognition.onerror = event => {
+      console.log("error");
+      listen();
+    };
+    recognition.start();
+  };
+
+  let main = () => {
+    listen();
+  };
+</script>
+
+<body>
+  <input type="button" onclick="main()" />
+</body>

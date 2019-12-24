@@ -13,18 +13,31 @@
 
     <section id="settings">
       <h2>Settings</h2>
-      <form action="index.html" method="get">
-        <label>Target Speed (Speed * BPM)</label>
-        <input
-          type="number"
-          name="targetspeed"
-          id="settings-targetspeed"
-          min="1"
-          max="9999"
-          placeholder="600"
-        />
-        <button type="submit">Calc</button>
-      </form>
+      <section id="settings_speed">
+        <h3>Target Speed (Speed * BPM)</h3>
+        <form action="index.html" method="get">
+          <input
+            type="number"
+            name="targetspeed"
+            id="settings-targetspeed"
+            min="1"
+            max="9999"
+            placeholder="600"
+          />
+          <button type="submit">Calc</button>
+        </form>
+      </section>
+
+      <section id="settings_voice">
+        <section id="settings_voice_toggle">
+          <h3>Voice Recognition</h3>
+          <input type="button" id="settings_voice_toggle_on" value="ON" />
+          <input type="button" id="settings_voice_toggle_off" value="OFF" />
+        </section>
+        <section id="settings_voice_example">
+          ex.)「ひゃくにじゅう」->「4」
+        </section>
+      </section>
     </section>
 
     <section id="speed-list-section">
