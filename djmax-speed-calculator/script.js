@@ -109,9 +109,9 @@ class VoiceRecognition {
   start() {
     let SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     this.recognition = new SpeechRecognition();
+    this.recognition.continuous = true;
     this.recognition.onresult = event => this.success(event);
     this.recognition.onsoundend = event => this.start(event);
-    this.recognition.onspeechend = event => this.start(event);
     this.recognition.onerror = event => this.start(event);
     this.recognition.start();
   }
@@ -128,8 +128,6 @@ class VoiceRecognition {
     if (result.isFinal) {
       this.analyze(result[0].transcript);
     }
-
-    this.start();
   }
 
   analyze(text) {
