@@ -124,7 +124,7 @@ class VoiceRecognition {
       let bpm = Number(text);
       if (MIN_BPM <= bpm && bpm <= MAX_BPM) {
         let speed = this.speedCalculator.getNealySpeed(bpm);
-        this.say("ビーピーエム" + bpm + "の推奨スピードは" + speed + "です");
+        this.say(bpm + "ビーピーエムは" + speed + "くらいだよ");
       }
     }
   }
