@@ -134,8 +134,10 @@ class VoiceRecognition {
     console.log(text);
     if (text.match(/^\d+$/)) {
       let bpm = Number(text);
-      let speed = this.speedCalculator.getNealySpeed(bpm);
-      this.say("ビーピーエム" + bpm + "の推奨スピードは" + speed + "です");
+      if (SpeedCalculator.MIN_BPM <= bpm && bpm <= SpeedCalculator.MAX_BPM) {
+        let speed = this.speedCalculator.getNealySpeed(bpm);
+        this.say("ビーピーエム" + bpm + "の推奨スピードは" + speed + "です");
+      }
     }
   }
 
