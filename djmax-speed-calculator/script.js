@@ -16,12 +16,11 @@ class Utils {
   }
 }
 
+// [0.5, 0.75, 1, 1.25, ..., 4.75, 5]
+const SPEED_LIST = [...Array(20 + 1).keys()].map(v => v * 0.25).slice(2);
+const MIN_BPM = 60;
+const MAX_BPM = 250;
 class SpeedCalculator {
-  // [0.5, 0.75, 1, 1.25, ..., 4.75, 5]
-  static SPEED_LIST = [...Array(20 + 1).keys()].map(v => v * 0.25).slice(2);
-  static MIN_BPM = 60;
-  static MAX_BPM = 250;
-
   targetSpeed = null;
 
   constructor(targetSpeed) {
@@ -31,24 +30,17 @@ class SpeedCalculator {
   getSpeedList() {
     let speedList = [];
 
-    for (let i = 0; i < SpeedCalculator.SPEED_LIST.length; i++) {
+    for (let i = 0; i < SPEED_LIST.length; i++) {
       let row = {};
 
-      row.speed = SpeedCalculator.SPEED_LIST[i];
+      row.speed = SPEED_LIST[i];
       row.lowBpm = Utils.round(
-        this.targetSpeed /
-          ((SpeedCalculator.SPEED_LIST[i] + SpeedCalculator.SPEED_LIST[i + 1]) /
-            2),
+        this.targetSpeed / ((SPEED_LIST[i] + SPEED_LIST[i + 1]) / 2),
         3
       );
-      row.midBpm = Utils.round(
-        this.targetSpeed / SpeedCalculator.SPEED_LIST[i],
-        3
-      );
+      row.midBpm = Utils.round(this.targetSpeed / SPEED_LIST[i], 3);
       row.highBpm = Utils.round(
-        this.targetSpeed /
-          ((SpeedCalculator.SPEED_LIST[i - 1] + SpeedCalculator.SPEED_LIST[i]) /
-            2),
+        this.targetSpeed / ((SPEED_LIST[i - 1] + SPEED_LIST[i]) / 2),
         3
       );
 
@@ -61,11 +53,7 @@ class SpeedCalculator {
   getBpmList() {
     let bpmList = [];
 
-    for (
-      let bpm = SpeedCalculator.MIN_BPM;
-      bpm <= SpeedCalculator.MAX_BPM;
-      bpm++
-    ) {
+    for (let bpm = MIN_BPM; bpm <= MAX_BPM; bpm++) {
       let row = {};
 
       row.bpm = bpm;
@@ -73,7 +61,7 @@ class SpeedCalculator {
 
       // mark
       row.mark = false;
-      SpeedCalculator.SPEED_LIST.forEach(speed => {
+      SPEED_LIST.forEach(speed => {
         if (
           this.targetSpeed / (bpm + 1) < speed &&
           speed <= this.targetSpeed / bpm
@@ -134,7 +122,7 @@ class VoiceRecognition {
     console.log(text);
     if (text.match(/^\d+$/)) {
       let bpm = Number(text);
-      if (SpeedCalculator.MIN_BPM <= bpm && bpm <= SpeedCalculator.MAX_BPM) {
+      if (MIN_BPM <= bpm && bpm <= MAX_BPM) {
         let speed = this.speedCalculator.getNealySpeed(bpm);
         this.say("ビーピーエム" + bpm + "の推奨スピードは" + speed + "です");
       }
