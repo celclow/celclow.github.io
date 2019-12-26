@@ -97,7 +97,7 @@ class VoiceRecognition {
   start() {
     let SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     this.recognition = new SpeechRecognition();
-    this.recognition.continuous = true;
+    this.recognition.continuous = false; // tureだと取り逃しが多い…。なぜ？
     this.recognition.onresult = event => this.success(event);
     this.recognition.onsoundend = event => this.start(event);
     this.recognition.onerror = event => this.start(event);
