@@ -9,77 +9,93 @@
   </head>
 
   <body>
-    <h1>DJMAX Speed Calculator</h1>
+    <h1>DJMAX RESPECT SPEED CALCULATOR</h1>
 
     <section id="settings">
-      <h2>Settings</h2>
+      <h2>SETTINGS</h2>
       <section id="settings_speed">
-        <h3>Target Speed (Speed * BPM)</h3>
-        <form action="index.html" method="get">
-          <input
-            type="number"
-            name="targetspeed"
-            id="settings-targetspeed"
-            min="1"
-            max="9999"
-            placeholder="600"
-          />
-          <button type="submit">Calc</button>
-        </form>
+        <h3>TARGET SEPEED (SPEED * BPM)</h3>
+        <section class="contents">
+          <form action="index.html" method="get">
+            <input
+              type="number"
+              name="targetspeed"
+              id="settings-targetspeed"
+              min="1"
+              max="9999"
+              placeholder="600"
+            />
+            <button type="submit">CALC</button>
+          </form>
+        </section>
       </section>
 
       <section id="settings_voice">
         <section id="settings_voice_toggle">
-          <h3>Voice Recognition (Beta) (Google Chrome only)</h3>
-          <input type="button" id="settings_voice_toggle_on" value="ON" />
-          <input type="button" id="settings_voice_toggle_off" value="OFF" />
-        </section>
-        <section id="settings_voice_example">
-          ex.)「ひゃくにじゅう」->「4」
+          <h3>VOICE RECOGNITION (BETA) (GOOGLE CHROME ONLY)</h3>
+          <section class="contents">
+            <section id="settings_voice_toggle_butotn">
+              <input type="button" id="settings_voice_toggle_on" value="ON" />
+              <input type="button" id="settings_voice_toggle_off" value="OFF" />
+            </section>
+            <section id="settings_voice_toggle_description">
+              <p>
+                音声認識を有効にします。<br />
+                マイクに向かってBPMを喋ると推奨SPEEDを知らせてくれます。<br />
+                (例)「ひゃくにじゅう」→「推奨SPEEDは4です。」
+              </p>
+            </section>
+          </section>
         </section>
       </section>
     </section>
 
     <section id="speed-list-section">
-      <h2>Speed List</h2>
-      <ul id="speed-list" class="list">
-        <li>
-          <ul class="row row-header">
-            <li>Speed</li>
-            <li>Low BPM</li>
-            <li>Mid BPM</li>
-            <li>High BPM</li>
-          </ul>
-        </li>
-        <!-- <li>
+      <h2>SPEED LIST</h2>
+      <section class="contents">
+        <ul id="speed-list" class="list">
+          <li>
+            <ul class="row row-header">
+              <li>SPEED</li>
+              <li>LOW BPM</li>
+              <li>MID BPM</li>
+              <li>HIGH BPM</li>
+            </ul>
+          </li>
+          <!-- <li>
           <ul class="row">
             <li name="speed">1.0</li>
             <li name="bpm">600</li>
           </ul>
         </li> -->
-      </ul>
+        </ul>
+      </section>
     </section>
 
     <section id="bpm-list-section">
-      <h2>BPM List</h2>
-      <ul id="bpm-list" class="list">
-        <li>
-          <ul class="row row-header">
-            <li>BPM</li>
-            <li>Speed</li>
-          </ul>
-        </li>
-        <!-- <li>
+      <h2>BPM LIST</h2>
+      <section class="contents">
+        <ul id="bpm-list" class="list">
+          <li>
+            <ul class="row row-header">
+              <li>BPM</li>
+              <li>SPEED</li>
+            </ul>
+          </li>
+          <!-- <li>
           <ul class="row">
             <li>200</li>
             <li>3.0</li>
           </ul>
         </li> -->
-      </ul>
+        </ul>
+      </section>
     </section>
 
     <section id="footer-section">
-      <a href="https://twitter.com/celclow">@celclow</a>
+      <section class="contents">
+        <a href="https://twitter.com/celclow">@celclow</a>
+      </section>
     </section>
   </body>
 </html>
