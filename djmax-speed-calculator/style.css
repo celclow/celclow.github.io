@@ -67,14 +67,14 @@ html,
 body {
   font-family: "Verdana";
   color: #fff;
-  background-color: #38353e;
+  background-color: #382e3d;
   margin: 0px;
 }
 
 h1 {
   font-size: 30pt;
   font-family: "blippo";
-  background: linear-gradient(to right, #fb4d75, #fb4d75);
+  background: linear-gradient(to right, #fb4d75, #f674d4);
   margin: 0px;
   padding: 5px;
 }
